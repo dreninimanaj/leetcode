@@ -1,32 +1,30 @@
 #include <iostream>
-#include <vector>
-
+#include <string>
 using namespace std;
-vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
-        int n = nums.size();
-        vector <int> result (n);
-        int counter;
-        for (int i =0;i<n;i++){
-            counter = 0;
-            for (int j=0;j<n;j++){
-                if (i!=j && nums[i]>nums[j]){
-                    counter++;
-                }
 
-            }
-            result[i] = counter;
+int numJewelsInStones(string jewels, string stones) {
+    int lengjew = jewels.size();
+    int lengsto = stones.size();
+    int count = 0;
 
-        }
-
-        return result;
-    }
-int main(){
-    vector <int> nums = {8,1,2,2,3};
-   vector <int> result = smallerNumbersThanCurrent(nums);
-    for (int i = 0; i < result.size(); i++)
+    for (int i = 0; i < lengjew; i++)
     {
-        cout << result[i] << " ";
+        for (int j = 0; j < lengsto; j++)
+        {
+            if (jewels[i] == stones[j])
+            {
+                count++;
+            }
+        }
     }
-    
+    return count;
+            }
+
+int main(){
+    string jewels = "aA";
+    string stones = "aAAbbbb";
+
+    int result = numJewelsInStones(jewels, stones);
+    cout << "Number of stones that are jewels is: " << result;
     return 0;
 }
