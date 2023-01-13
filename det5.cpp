@@ -1,34 +1,37 @@
 #include <iostream>
 #include <vector>
-#include <string.h>
-#include <map>
+#include <string>
 using namespace std;
 
- string restoreString(string s, vector<int>& indices) {
-        map<int, string> together;
-        for (int i=0; i<indices.size();i++){
-            together[indices[i]] = s.at(i);
+int mostWordsFound(vector<string>& sentences) {
+    int length = sentences.size();
+    int words = 0;
+    int max = 0;
+    for (int  i = 0; i < length; i++)
+    {
+        words = 0;
+        string fjalia = sentences[i];
+        for (int j = 0; j < fjalia.size(); j++)
+        {
+            if (fjalia[j] == ' ')
+            {
+                words++;
+            }
         }
-
-        string result = "";
-
-        for(int i =0;i<indices.size();i++){
-            result += together[i];
-        }
-
-        return result;
-
+        words += 1;
+        if (max < words)
+        {
+            max = words;
+        } 
         
     }
+    return max;
+        }
 
 int main(){
-
-        vector<int> indices;
-        string s = "codeleet";
-        indices = {4, 5, 6, 7, 0, 2, 1, 3};
-
-        string result = restoreString(s, indices);
-        cout << result;
-
-        return 0;
+    vector<string> sentences;
+    sentences = {"alice and bob love leetcode", "i think so too", "this is great thanks very much"};
+    int result = mostWordsFound(sentences);
+    cout << "The greatest number of words is: " << result << endl;
+    return 0;
 }
