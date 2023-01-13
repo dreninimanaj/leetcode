@@ -13,7 +13,7 @@ string toLowerCase(string s) {
         return dreni;
     }
 int main(){
-    string s = "DrenNimanaj";
+    string s = "DrenNimanaj" ;
     string result = toLowerCase(s);
     cout << result;
     return 0;
