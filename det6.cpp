@@ -20,8 +20,8 @@ int main(){
         vector<int> nums;
         vector<int> result;
 
-        nums = {1, 2, 1};
-        result = getConcatenation(nums);
+        nums = {1, 2, 1} ;
+        result = getConcatenation(nums) ;
         cout << "{";
         for (int i = 0; i < result.size(); i++)
         {
