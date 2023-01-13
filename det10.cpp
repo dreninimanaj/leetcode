@@ -5,19 +5,19 @@
 using namespace std;
 
 int prefixCount(vector<string>& words, string pref) {
-    int count = 0;
+    int c = 0;
     for (int i = 0; i < words.size(); i++)
     {
         string word = words[i];
         int length = pref.size();
         if (word.substr(0, length) == pref)
         {
-            count++;
+            c++;
         }
         
     }
-    return count;
-        }
+    return c;
+    }
 
 int main(){
     vector<string> words;
