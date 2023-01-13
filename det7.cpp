@@ -20,7 +20,7 @@ int percentageLetter(string s, char letter) {
         }
 
 int main(){
-    string s = "foobar";
+    string s = "foobar" ;
     char letter = 'o';
 
     int result = percentageLetter(s, letter);
